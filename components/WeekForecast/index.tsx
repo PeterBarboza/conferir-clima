@@ -6,10 +6,10 @@ type Props = {
   children: ReactNode
 }
 
-export function Layout({ children }: Props) {
+export function WeekForecast({ children }: Props) {
   return (
-    <div className={styles.layout}>
+    <section className={styles.weekForecast}>
       {children}
-    </div>
+    </section>
   )
 }

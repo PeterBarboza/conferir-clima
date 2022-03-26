@@ -1,15 +1,13 @@
-import { ReactNode } from "react"
+import Image from "next/image"
 
-import styles from "style.module.scss"
+import logoSvg from "../../assets/helpers/logo.svg"
 
-type Props = {
-  children: ReactNode
-}
+import styles from "./style.module.scss"
 
-export function Header({ children }: Props) {
+export function Header() {
   return (
     <header className={styles.header}>
-      {children}
+      <Image src={logoSvg} alt="Conferir clima" />
     </header>
   )
 }

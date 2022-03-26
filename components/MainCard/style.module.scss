@@ -1,10 +1,95 @@
-.main {
+.mainCard {
   width: 100%;
-  min-height: 100vh;
+  max-width: 450px;
+  min-height: 200px;
   height: fit-content;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: fit-content 1fr;
+  grid-template-rows: fit-content fit-content fit-content;
+
+  box-shadow: 0 0 4px var(--light-gray);
+
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+
+  padding: 15px 15px 5px;
+
+  * {
+    align-self: center;
+  }
+
+  .illustration {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .metaData {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    h1 {
+      font-size: var(--lg-mobile-font);
+    }
+    p {
+      font-size: var(--sm-mobile-font);
+    }
+  }
+
+  .status {
+    grid-column: 1/3;
+    grid-row: 2/3;
+
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: var(--sm-mobile-font);
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .riseAndSet {
+    grid-column: 1/3;
+    grid-row: 3/4;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: var(--sm-mobile-font);
+    text-align: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3px;
+    }
+  }
 }

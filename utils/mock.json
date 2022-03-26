@@ -1,11 +1,94 @@
 {
-  "location": "São Paulo, SP",
-  "climate": "clear_day",
-  "hour": "14:35",
+  "city": "São Paulo, SP",
+  "description": "Parcialmente nublado",
+  "condition_slug": "clear_day",
+  "time": "14:35",
   "date": "13/02/1997",
-  "temperature": "29",
-  "windSpeed": "5.5 km/h",
-  "airHumidity": "78.2",
+  "temp": "29",
+  "wind_speedy": "5.5 km/h",
+  "humidity": "78.2",
   "sunrise": "6:13 am",
-  "sunset": "6:14 pm"
+  "sunset": "6:14 pm",
+  "forecast": [
+    {
+      "date": "26/03",
+      "weekday": "Sáb",
+      "max": 27,
+      "min": 20,
+      "description": "Chuva",
+      "condition": "rain"
+    },
+    {
+      "date": "27/03",
+      "weekday": "Dom",
+      "max": 22,
+      "min": 20,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "28/03",
+      "weekday": "Seg",
+      "max": 24,
+      "min": 19,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "29/03",
+      "weekday": "Ter",
+      "max": 26,
+      "min": 19,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "30/03",
+      "weekday": "Qua",
+      "max": 28,
+      "min": 19,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "31/03",
+      "weekday": "Qui",
+      "max": 21,
+      "min": 16,
+      "description": "Chuva",
+      "condition": "rain"
+    },
+    {
+      "date": "01/04",
+      "weekday": "Sex",
+      "max": 15,
+      "min": 14,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "02/04",
+      "weekday": "Sáb",
+      "max": 19,
+      "min": 14,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "03/04",
+      "weekday": "Dom",
+      "max": 22,
+      "min": 15,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    },
+    {
+      "date": "04/04",
+      "weekday": "Seg",
+      "max": 22,
+      "min": 15,
+      "description": "Chuvas esparsas",
+      "condition": "rain"
+    }
+  ]
 }

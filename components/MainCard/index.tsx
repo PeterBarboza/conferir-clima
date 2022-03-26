@@ -1,65 +1,85 @@
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import Image from "next/image"
 
-import styles from "./style.module.scss"
-
 import { chooseSvg } from "../../utils/chooseSvg"
+
+import styles from "./style.module.scss"
 
 import thermometerPng from "../../assets/helpers/thermometer.png"
 import humidityPng from "../../assets/helpers/humidity.png"
 import windPng from "../../assets/helpers/wind.png"
 
 type Props = {
-  location: string
-  climate: string
-  hour: string
+  city: string
+  description: string
+  condition_slug: string
+  time: string
   date: string
-  temperature: string
-  windSpeed: string
-  airHumidity: string
+  temp: string
+  wind_speedy: string
+  humidity: string
   sunrise: string
   sunset: string
 }
 
 export function MainCard({
-  location,
-  climate,
-  hour,
+  city,
+  description,
+  condition_slug,
+  time,
   date,
-  temperature,
-  windSpeed,
-  airHumidity,
+  temp,
+  wind_speedy,
+  humidity,
   sunrise,
   sunset
 }: Props) {
-  const illustration = chooseSvg(climate)
+  const [windowWidth, setWindowWidth] = useState<number>(0)
+  const [imageWidth, setImageWidth] = useState<number>(50)
+
+  const illustration = chooseSvg(condition_slug)
+
+  useLayoutEffect(() => {
+    setWindowWidth(window.screen.width)
+
+    if (windowWidth > 650) {
+      setImageWidth(70)
+    }
+  }, [windowWidth])
 
   return (
     <section className={styles.mainCard}>
       <div className={styles.illustration}>
-        <Image src={illustration} className={styles.img} alt={climate} />
+        <Image
+          src={illustration}
+          className={styles.img}
+          alt={condition_slug}
+          width={imageWidth}
+          height={imageWidth}
+        />
       </div>
       <div className={styles.metaData}>
-        <h1>{location}</h1>
-        <p>{hour} - {date}</p>
-        <p>{climate}</p>
+        <h1>{city}</h1>
+        <p>{time} - {date}</p>
+        <p>{description}</p>
       </div>
       <div className={styles.status}>
         <div>
           <Image src={thermometerPng} alt="temperatura" width={20} height={20} />
           <span>
-            {temperature}
+            {temp}
           </span>
         </div>
         <div>
           <Image src={humidityPng} alt="velocidade do vento" width={20} height={20} />
           <span>
-            {windSpeed}
+            {wind_speedy}
           </span>
         </div>
         <div>
           <Image src={windPng} alt="humidade do ar" width={20} height={20} />
           <span>
-            {airHumidity}
+            {humidity}
           </span>
         </div>
       </div>

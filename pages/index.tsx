@@ -24,13 +24,19 @@ const Home: NextPage = () => {
       <main className={styles.homeMain}>
         <MainCard {...mock} />
         <WeekForecast>
-          <WeekCard />
-          <WeekCard />
-          <WeekCard />
-          <WeekCard />
-          <WeekCard />
-          <WeekCard />
-          <WeekCard />
+          {mock.forecast.map((item, index) => {
+            return (
+              <WeekCard
+                date={item.date}
+                weekday={item.weekday}
+                condition={item.condition}
+                description={item.description}
+                min={item.min}
+                max={item.max}
+                key={index}
+              />
+            )
+          })}
         </WeekForecast>
       </main>
     </Layout>

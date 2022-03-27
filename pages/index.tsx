@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     getData(url)
-    console.log(url)
+
     //eslint-disable-next-line
   }, [])
 

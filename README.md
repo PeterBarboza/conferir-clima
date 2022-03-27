@@ -2,7 +2,7 @@
 
 Site que mostra a previsão do tempo. A intenção desse projeto era praticar minhas habilidades com consumo de api. A aplicação também conta com design responsivo.
 
-***O site está em manutenção então o link não está disponível no momento***
+*** ***O site está em manutenção então o link não está disponível no momento*** ***
 
 ## Tecnologias
 - React
@@ -13,7 +13,7 @@ Site que mostra a previsão do tempo. A intenção desse projeto era praticar mi
 
 ## Como rodar
 
-Você precisara da rota da API da HGBrasil que é a seguinte: ```https://api.hgbrasil.com/weather?format=json-cors```.
+Você precisara da rota da API da HGBrasil, usarei a seguinte no restante do exemplo e você também pode usar se quiser ```https://api.hgbrasil.com/weather?format=json-cors```, mas caso queira ultilizar mais funcionalidades da API será nescessário uma chave de acesso. Existe uma versão gratuita que você pode gerar no site deles. Visite a documentação para mais detalhes <a href="https://console.hgbrasil.com/documentation/weather" target="_blank" rel="noreferrer">Clicando aqui.</a>
 
 É nescessário ter o git e o npm/yarn instalado na sua máquina.
 

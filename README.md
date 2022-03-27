@@ -39,8 +39,6 @@ Você precisara da rota da API da HGBrasil que é a seguinte: ```https://api.hgb
 
 Ou se preferir você pode alterar o valor da constante ```url``` na linha 23 de ```pages/index.tsx``` pela URL da API.
 ```
-21 | const Home: NextPage = () => {
-22 |   const [apiData, setApiData] = useState<IForecast>()
 23 |   const url = process.env.NEXT_PUBLIC_API_URL as string
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```

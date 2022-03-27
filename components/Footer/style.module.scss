@@ -1,0 +1,39 @@
+.footer {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: var(--blue);
+
+  color: var(--white);
+  text-align: center;
+  font-weight: 700;
+
+  padding: 10px 0 20px;
+
+  h2 {
+    font-size: var(--sm-mobile-font);
+  }
+
+  p {
+    font-size: var(--sm-mobile-font);
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+
+    font-size: var(--sm-mobile-font);
+    font-weight: 600;
+
+    a {
+      color: var(--white);
+      line-height: calc(var(--sm-mobile-font) + 5px);
+    }
+  }
+}

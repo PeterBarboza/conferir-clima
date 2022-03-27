@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import Image from "next/image"
+
+import { IForecast } from "../../interfaces/IForecast"
 
 import { chooseSvg } from "../../utils/chooseSvg"
 
@@ -8,19 +10,6 @@ import styles from "./style.module.scss"
 import thermometerPng from "../../assets/helpers/thermometer.png"
 import humidityPng from "../../assets/helpers/humidity.png"
 import windPng from "../../assets/helpers/wind.png"
-
-type Props = {
-  city: string
-  description: string
-  condition_slug: string
-  time: string
-  date: string
-  temp: string
-  wind_speedy: string
-  humidity: string
-  sunrise: string
-  sunset: string
-}
 
 export function MainCard({
   city,
@@ -33,18 +22,25 @@ export function MainCard({
   humidity,
   sunrise,
   sunset
-}: Props) {
+}: IForecast) {
   const [windowWidth, setWindowWidth] = useState<number>(0)
   const [imageWidth, setImageWidth] = useState<number>(50)
 
   const illustration = chooseSvg(condition_slug)
 
   useLayoutEffect(() => {
-    setWindowWidth(window.screen.width)
+    function onResize() {
+      const x = window.innerWidth
+      setWindowWidth(x)
+    }
 
     if (windowWidth > 650) {
       setImageWidth(70)
+    } else {
+      setImageWidth(50)
     }
+
+    window.addEventListener("resize", onResize)
   }, [windowWidth])
 
   return (
@@ -67,7 +63,7 @@ export function MainCard({
         <div>
           <Image src={thermometerPng} alt="temperatura" width={20} height={20} />
           <span>
-            {temp}
+            {temp}°
           </span>
         </div>
         <div>

@@ -1,18 +1,39 @@
+import { useEffect, useState } from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
+
+import process from "process"
+
+import { getApiData } from "../services/getApiData"
+
+import { IForecast } from "../interfaces/IForecast"
 
 import styles from "../styles/home.module.scss"
 
 import { Layout } from "../components/Layout"
 import { Header } from "../components/Header"
+import { Loader } from "../components/Loader"
 import { MainCard } from "../components/MainCard"
 import { WeekForecast } from "../components/WeekForecast"
-
-//TODO: tirar mock e incluir api
-import mock from "../utils/mock.json"
 import { WeekCard } from "../components/WeekCard"
+import { Footer } from "../components/Footer"
 
 const Home: NextPage = () => {
+  const [apiData, setApiData] = useState<IForecast>()
+  const url = process.env.NEXT_PUBLIC_API_URL as string
+
+  async function getData(url: string) {
+    const { results } = await getApiData(url)
+
+    setApiData(results)
+  }
+
+  useEffect(() => {
+    getData(url)
+    console.log(url)
+    //eslint-disable-next-line
+  }, [])
+
   return (
     <Layout>
       <Head>
@@ -22,23 +43,34 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className={styles.homeMain}>
-        <MainCard {...mock} />
+        {
+          !apiData ?
+            <Loader loadingMessage="Carregando..." />
+            :
+            <MainCard {...apiData as IForecast} />
+        }
         <WeekForecast>
-          {mock.forecast.map((item, index) => {
-            return (
-              <WeekCard
-                date={item.date}
-                weekday={item.weekday}
-                condition={item.condition}
-                description={item.description}
-                min={item.min}
-                max={item.max}
-                key={index}
-              />
-            )
-          })}
+          {
+            !apiData ?
+              <div />
+              :
+              apiData.forecast.map((item, index) => {
+                return (
+                  <WeekCard
+                    date={item.date}
+                    condition={item.condition}
+                    description={item.description}
+                    min={item.min}
+                    max={item.max}
+                    weekday={item.weekday}
+                    key={index}
+                  />
+                )
+              })
+          }
         </WeekForecast>
       </main>
+      <Footer />
     </Layout>
   )
 }

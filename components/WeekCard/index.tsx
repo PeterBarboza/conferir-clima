@@ -38,11 +38,11 @@ export function WeekCard({
       <div className={styles.minMax}>
         <div>
           <Image src={minArrow} alt="Mínima" />
-          <span>{min}</span>
+          <span>{min}°</span>
         </div>
         <div>
           <Image src={maxArrow} alt="Mínima" />
-          <span>{max}</span>
+          <span>{max}°</span>
         </div>
       </div>
     </div>

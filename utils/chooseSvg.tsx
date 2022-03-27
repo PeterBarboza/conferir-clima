@@ -4,23 +4,34 @@ import hail from "../assets/climates/hail.svg"
 import rain from "../assets/climates/rain.svg"
 import snow from "../assets/climates/snow.svg"
 import storm from "../assets/climates/storm.svg"
-
-//TODO: Pegar SVG para nublado e neblina
-import nublado from "../assets/climates/cloud.svg"
-import neblina from "../assets/climates/fog.svg"
+import notFound from "../assets/climates/notFound.svg"
+import cloud from "../assets/climates/cloud.svg"
+import fog from "../assets/climates/fog.svg"
 
 export function chooseSvg(climate: string) {
   switch (climate) {
-    case "clear_day" || "none_day":
+    case "clear_day":
       return clearDay
 
-    case "clear_night" || "none_night":
+    case "none_day":
+      return clearDay
+
+    case "clear_night":
       return clearNight
 
-    case "cloud" || "cloudly_day" || "cloudly_night":
-      return nublado
+    case "none_night":
+      return clearNight
 
-    case "storm ":
+    case "cloud":
+      return cloud
+
+    case "cloudly_day":
+      return cloud
+
+    case "cloudly_night":
+      return cloud
+
+    case "storm":
       return storm
 
     case "snow":
@@ -33,6 +44,9 @@ export function chooseSvg(climate: string) {
       return rain
 
     case "fog":
-      return neblina
+      return fog
+
+    default:
+      return notFound
   }
 }

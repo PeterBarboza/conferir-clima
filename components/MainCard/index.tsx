@@ -67,15 +67,15 @@ export function MainCard({
           </span>
         </div>
         <div>
-          <Image src={humidityPng} alt="velocidade do vento" width={20} height={20} />
+          <Image src={windPng} alt="velocidade do vento" width={20} height={20} />
           <span>
             {wind_speedy}
           </span>
         </div>
         <div>
-          <Image src={windPng} alt="humidade do ar" width={20} height={20} />
+          <Image src={humidityPng} alt="humidade do ar" width={20} height={20} />
           <span>
-            {humidity}
+            {humidity}%
           </span>
         </div>
       </div>

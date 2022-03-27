@@ -9,10 +9,10 @@ export function Footer() {
       <p>Come visit my medias</p>
       <ul>
         <li>
-          <a href="">Linkedin</a>
+          <a href="https://www.linkedin.com/in/pedro-barboza-webdev/" target="_blank" rel="noreferrer">Linkedin</a>
         </li>
         <li>
-          <a href="">Github</a>
+          <a href="https://github.com/PeterBarboza" target="_blank" rel="noreferrer">Github</a>
         </li>
       </ul>
     </footer>

@@ -7,6 +7,10 @@
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 15px;
 
+  * {
+    align-self: stretch;
+  }
+
   padding: 20px 0;
 }
 

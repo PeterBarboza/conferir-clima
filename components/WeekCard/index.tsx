@@ -22,13 +22,13 @@ export function WeekCard({
   min,
   max,
   description,
-  condition
+  condition,
 }: Props) {
   const illustration = chooseSvg(condition)
 
   return (
     <div className={styles.weekCard}>
-      <div className={styles.weekDay}>
+      <div className={styles.weekDay} translate="no">
         {date} - {weekday}
       </div>
       <div className={styles.illustration}>
